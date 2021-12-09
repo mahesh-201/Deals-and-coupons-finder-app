@@ -1,0 +1,45 @@
+server:
+  port: 8089
+
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: Coupons
+        uri: http://localhost:8093/
+        predicates:
+        - Path=/coupon/**
+        
+  
+      
+
+      - id: Coupons
+        uri: http://localhost:8090/
+        predicates:
+        - Path=/dopay/**
+
+      - id: profilemanagement
+        uri: http://localhost:8085/
+        predicates:
+        - Path=/users/**
+        
+
+      - id: Coupons
+        uri: http://localhost:8084/
+        predicates:
+        - Path=/orderController/**
+    
+
+      - id: Coupons
+        uri: http://localhost:8084/
+        predicates:
+        - Path=/productsController/**
+        
+        
+        
+     
+        
+        
+
+
